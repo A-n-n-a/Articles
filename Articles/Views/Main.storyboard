@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ooZ-0S-dn3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Details View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="DetailsViewController" customModule="Articles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpw-Mi-1ZQ">
+                                <rect key="frame" x="20" y="0.0" width="335" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="V2q-Lw-i5d">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="V2q-Lw-i5d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Xz-sR-82b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kpw-Mi-1ZQ" secondAttribute="bottom" constant="20" id="QhK-ow-k1N"/>
+                            <constraint firstItem="kpw-Mi-1ZQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dc3-8K-1yo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpw-Mi-1ZQ" secondAttribute="trailing" constant="20" id="e1J-2q-MZG"/>
+                            <constraint firstItem="V2q-Lw-i5d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tFG-qg-TWq"/>
+                            <constraint firstItem="kpw-Mi-1ZQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ypw-g7-ijN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xUJ-6i-EF6"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="V2q-Lw-i5d" id="5zz-aD-Dlk"/>
+                        <outlet property="webView" destination="kpw-Mi-1ZQ" id="xL0-lg-jKw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3560.8000000000002" y="116.49175412293854"/>
+        </scene>
+        <!--Articles List View Controller-->
+        <scene sceneID="iY8-cb-C8o">
+            <objects>
+                <viewController id="DEN-5x-FEt" customClass="ArticlesListViewController" customModule="Articles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5XQ-Bh-aOW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QH5-6q-FRd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DEN-5x-FEt" id="CqL-mb-72m"/>
+                                    <outlet property="delegate" destination="DEN-5x-FEt" id="6qv-Gi-tjP"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Vzg-WG-DfJ">
+                                <rect key="frame" x="162.5" y="308" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="S99-ak-wMm"/>
+                                    <constraint firstAttribute="height" constant="50" id="U6V-1u-lRG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.cornerRadius" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QH5-6q-FRd" firstAttribute="top" secondItem="5XQ-Bh-aOW" secondAttribute="top" id="8du-yd-i8R"/>
+                            <constraint firstItem="Vzg-WG-DfJ" firstAttribute="centerX" secondItem="5XQ-Bh-aOW" secondAttribute="centerX" id="VYA-We-jNu"/>
+                            <constraint firstItem="Vzg-WG-DfJ" firstAttribute="centerY" secondItem="5XQ-Bh-aOW" secondAttribute="centerY" id="XLv-MG-JWj"/>
+                            <constraint firstItem="QH5-6q-FRd" firstAttribute="bottom" secondItem="Rhy-jw-oIC" secondAttribute="bottom" id="ead-ta-ZOk"/>
+                            <constraint firstItem="QH5-6q-FRd" firstAttribute="leading" secondItem="Rhy-jw-oIC" secondAttribute="leading" id="jut-sp-BX4"/>
+                            <constraint firstItem="QH5-6q-FRd" firstAttribute="trailing" secondItem="Rhy-jw-oIC" secondAttribute="trailing" id="pwi-DB-Yvd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rhy-jw-oIC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zbL-h4-kIi">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="fuB-UH-ckt">
+                            <connections>
+                                <action selector="edit:" destination="DEN-5x-FEt" id="rq5-hH-ARw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Vzg-WG-DfJ" id="Fye-oZ-AQP"/>
+                        <outlet property="editButton" destination="fuB-UH-ckt" id="njN-aN-V8I"/>
+                        <outlet property="tableView" destination="QH5-6q-FRd" id="9JG-N3-wym"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showDetails" id="IHT-nA-znU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zw3-cs-6r0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775.1999999999998" y="117.39130434782609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GNb-QU-9B5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ooZ-0S-dn3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H41-0B-ivE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DEN-5x-FEt" kind="relationship" relationship="rootViewController" id="Z88-2b-agM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xh3-aJ-J0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+</document>
